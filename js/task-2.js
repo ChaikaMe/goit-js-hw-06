@@ -10,7 +10,12 @@ class Storage {
     this.#items.push(newItem);
   }
   removeItem(itemToRemove) {
-    this.#items.splice(this.#items.indexOf(itemToRemove), 1)
+    if (this.#items.includes(itemToRemove)) {
+      this.#items.splice(this.#items.indexOf(itemToRemove), 1)
+    }
+    else {
+      console.log(`Item ${itemToRemove} does not exist in the storage`)
+    }
   }
 }
 
